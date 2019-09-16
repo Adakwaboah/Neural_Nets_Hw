@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Sep  3 18:05:03 2019
-@author: Akwasi
+@author: Akwasi Darkwah Akwaboah
 Do not run code directly, rather copy code sections for each question
 """
 
@@ -19,22 +19,25 @@ print(a)    #print a
 
 #Question 2.
 def fibo():
-    n = int(input("Please enter the number of finonacci numbers desired! "))
+    n = int(input("Please enter the number of finonacci numbers desired: "))
     fb_list = []        #create empty list to hold all results
     a,b = 0,1
-    while len(fb_list) <= n:
+    if n < 0:
+        n = int(input("Enter positive integer: ")) #Ensure positive
+    while n >= 0 and len(fb_list) <= n:
         print(a, end=',')
         a, b = b, a+b
         fb_list.append(a)
         
-fibo()     
+        
+#Question 3
+import numpy as np
 
- #Question 3
-crt = np.random.rand(20,3)
+crt = np.random.rand(20,3)#cartesian coordinates
 
 #compute magnitude, r, theta, phi
 crt_sq = crt**2
-r = np.sqrt(crt_sq.sum(axis=1)) #Magnitude array
+r = np.sqrt(crt_sq.sum(axis=1)) #Magnitude array 
 theta = np.arccos(crt[:,2]/r)   #theta, x-y plane angle
 phi = np.arctan(crt[:,1]/crt[:,0]) #phi y-z plane
 
@@ -42,6 +45,9 @@ sph = np.zeros((20,3)) #an array to hold spherical cordinates
 sph[:,0] = r
 sph[:,1] = theta
 sph[:,2] = phi
+print('cartesian coordinates : \n',crt)
+print('\n')
+print('spherical coordinates : \n',sph)
 
 #Question 4
 
@@ -53,5 +59,5 @@ plt.plot(x_val,g_x)
 plt.xlabel('x-axis (x)')
 plt.ylabel('y-axis: f(x) or g(x)')
 plt.legend(['f(x) = $e^{-x/10}sin(\pi x)$','g(x) = $xe^{-x/3}$'], loc='upper right')
-plt.savefig('function_plot.png')
 plt.show()
+
