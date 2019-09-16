@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep  3 18:05:03 2019
+
+@author: Akwasi
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Question 1.
+a = []   #create empty list to hold all results
+for x in np.arange(2000, 3200):
+    if x%7 == 0 and x%5 != 0:
+        a.append(n) #add number divisble by 7 and not 5 to a
+print(a)    #print a
+
+
+#Question 2.
+def fibo():
+    n = int(input("Please enter the number of finonacci numbers desired! "))
+    fb_list = []        #create empty list to hold all results
+    a,b = 0,1
+    while len(fb_list) <= n:
+        print(a)
+        a, b = b, a+b
+        fb_list.append(a)
+        
+
+ #Question 3
+crt = np.random.rand(20,3)
+
+#compute magnitude, r, theta, phi
+crt_sq = crt**2
+r = np.sqrt(crt_sq.sum(axis=1)) #Magnitude array
+theta = np.arccos(crt[:,2]/r)   #theta, x-y plane angle
+phi = np.arctan(crt[:,1]/crt[:,0]) #phi y-z plane
+
+sph = np.zeros((20,3)) #an array to hold spherical cordinates
+sph[:,0] = r
+sph[:,1] = theta
+sph[:,2] = phi
+
+#Question 4
+
+x_val = np.arange(0,10,0.001) #variable to hold 10/0.001 values of x b/n 0 & 10
+f_x = np.exp(-x_val/10)*np.sin(np.pi*x_val) #f(x)
+g_x = x_val*np.exp(-x_val/3)
+plt.plot(x_val,f_x)
+plt.plot(x_val,g_x)
+plt.xlabel('x-axis (x)')
+plt.ylabel('y-axis: f(x) or g(x)')
+plt.legend(['f(x) = $e^{-x/10}sin(\pi x)$','g(x) = $xe^{-x/3}$'], loc='upper right')
+plt.savefig('function_plot.png')
+plt.show
