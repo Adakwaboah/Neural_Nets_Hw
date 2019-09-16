@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Sep  3 18:05:03 2019
-
 @author: Akwasi
 Do not run code directly, rather copy code sections for each question
 """
@@ -12,9 +11,9 @@ import matplotlib.pyplot as plt
 
 #Question 1.
 a = []   #create empty list to hold all results
-for x in np.arange(2000, 3200):
-    if x%7 == 0 and x%5 != 0:
-        a.append(n) #add number divisble by 7 and not 5 to a
+for num in np.arange(2000, 3200):
+    if num%7 == 0 and num%5 != 0:
+        a.append(num) #add number divisble by 7 and not 5 to a
 print(a)    #print a
 
 
@@ -24,10 +23,11 @@ def fibo():
     fb_list = []        #create empty list to hold all results
     a,b = 0,1
     while len(fb_list) <= n:
-        print(a)
+        print(a, end=',')
         a, b = b, a+b
         fb_list.append(a)
         
+fibo()     
 
  #Question 3
 crt = np.random.rand(20,3)
