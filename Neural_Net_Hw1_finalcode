@@ -54,4 +54,4 @@ plt.xlabel('x-axis (x)')
 plt.ylabel('y-axis: f(x) or g(x)')
 plt.legend(['f(x) = $e^{-x/10}sin(\pi x)$','g(x) = $xe^{-x/3}$'], loc='upper right')
 plt.savefig('function_plot.png')
-plt.show
+plt.show()
