@@ -4,6 +4,7 @@
 Created on Tue Sep  3 18:05:03 2019
 
 @author: Akwasi
+Do not run code directly, rather copy code sections for each question
 """
 
 import numpy as np
