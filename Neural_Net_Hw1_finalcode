@@ -19,7 +19,7 @@ print(a)    #print a
 
 #Question 2.
 def fibo():
-    n = int(input("Please enter the number of finonacci numbers desired: "))
+    n = int(input("n+1 fibonacci numbers desired? Please enter n: "))
     fb_list = []        #create empty list to hold all results
     a,b = 0,1
     if n < 0:
@@ -29,7 +29,7 @@ def fibo():
         a, b = b, a+b
         fb_list.append(a)
         
-        
+fibo()       
 #Question 3
 import numpy as np
 
@@ -50,6 +50,8 @@ print('\n')
 print('spherical coordinates : \n',sph)
 
 #Question 4
+import numpy as np
+import matplotlib.pyplot as plt
 
 x_val = np.arange(0,10,0.001) #variable to hold 10/0.001 values of x b/n 0 & 10
 f_x = np.exp(-x_val/10)*np.sin(np.pi*x_val) #f(x)
